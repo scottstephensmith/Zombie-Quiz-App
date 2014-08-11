@@ -1,0 +1,34 @@
+/*body { } */
+
+.start-ctr, .quiz-ctr, .result-ctr {
+    margin:0 auto;
+    text-align: center;
+}
+.start-button, .quiz-button {
+    padding:10px;
+    margin:10px;
+    color:white;
+    background-color:black;
+    border-radius:5px;
+}
+
+.answers {
+    padding:10px;
+    margin:10px;
+    color:white;
+    background-color:green;
+    border-radius:5px;
+}
+
+.answers:hover {
+    background-color:gray;
+    color:black;
+}
+
+.start-button:hover, .quiz-button:hover {
+    background-color:blue;
+}
+
+.question-span, .answers, .quiz-button, .start-button, .answer-ctr {
+  display:block;
+}
