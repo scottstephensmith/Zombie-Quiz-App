@@ -24,21 +24,24 @@ $(document).ready(function() {
 
     // show question and answers
     function showQuestion(questionNumber) {
-        for (var i = 0; i < questions[questionNumber].questionText.length; i++) {
-            $('.question-span').text(questions[questionNumber].questionText[i]);
-        }
+        var questionItem = $("<div class='question' id='question-" + questionNumber + "'></div>");
+
+        //for (var i = 0; i < questions[questionNumber].questionText.length; i++) {
+            questionItem.append(questions[questionNumber].questionText);
+        //}
 
         for (var i = 0; i < questions[questionNumber].answers.length; i++) {
-            $(".answer-ctr").append("<div class=\"answers\">" + questions[questionNumber].answers[i] + "</div>");
-            $(questions.answered).hide();
+            questionItem.append("<div class=\"answers\">" + questions[questionNumber].answers[i] + "</div>");
+           //$(questions.answered).hide();
         }
-
+        $("#quiz-ctr").append(questionItem)
 
         //selecting answer
         $('.answers').click(function() {
-            var selected = $('.answers').index(this);
-            
-            //console.log("answer #" + (selected + 1) + " has been clicked" );
+            var selected = $(this).index();
+
+            $('#question-' + (player.answered)).hide();
+
             if (selected == questions[player.answered].correct) {
                 console.log("answer #" + (selected + 1) + " is the correct answer!");
                 player.score++
@@ -46,10 +49,12 @@ $(document).ready(function() {
                 console.log("answer #" + (selected + 1) + " is the wrong answer.");
             }
             
+            //checking if it's the last question
             player.answered++;
             if (player.answered < questions.length){
                 showScore();
                 showQuestion(player.answered)
+                //$('#question-' + player.answered).show();
             } else {
               $('.quiz-ctr').hide();
               $('.result-ctr').show();
