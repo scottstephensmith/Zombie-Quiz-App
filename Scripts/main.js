@@ -98,7 +98,7 @@ function Player() {
 // Show Score as user progresses through quiz (class is ".score-value")
 function showScore () {
 $('.score-value').text("Total: " + player.score + " points");
-$('.score-value2').text("Your Score: " + player.score + " points");
+$('.score-value2').text("Your Score: " + player.score + " points of a possible 5");
 $('#answered').text("Question number " + (1 + player.answered) + " out of " + questions.length);
 }
 
