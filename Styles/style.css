@@ -65,6 +65,7 @@ h1 {
 
 .start-button:hover, .quiz-button:hover {
     opacity: 1.0;
+    background-color: #990000;
 }
 
 .question-span, .answers, .quiz-button, .start-button, .answer-ctr {
