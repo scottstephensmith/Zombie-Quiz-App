@@ -105,37 +105,37 @@ $('#answered').text("Question number " + (1 + player.answered) + " out of " + qu
 
 // The actual questions and answers in arrays
 questions[0] = new Question(
-  ["Test question #1"],
-  ["answer 1", "correct answer 2", "answer 3", "answer 4"],
-  1,
-  "Explanation for why it's correct."
+  ["According to the CDC, which of the following is the \"perfect\" way to purify contaminated water for drinking?"],
+  ["Boiling the water for 1 full minute.", "Filtering the water through a coffee filter.", "Distilling the water, collecting vapor and cooling it again.", "None of the above."],
+  3,
+  "None of these methods is perfect. The best solution is to use all of them. Start with a filter to remove large debris, then boil the water to kill microbes and bacteria, and then distill if possible to remove heavy metals and other contaminants. "
 );
 
 questions[1] = new Question(
-  ["Test question #2"],
-  ["answer 1", "answer 2", "correct answer 3", "answer 4"],
+  ["According to the CDC, which of these is the best place to look for clean water during the zombie apocalypse?"],
+  ["Standing puddles", "Open containers", "Your home's hot water tank", "An ocean"],
   2,
-  "Explanation for why it's correct."
+  "Your home's hot water heater is filled with tap water that is safe to drink. Standing water outdoors should be avoided at all costs. Any water found outdoors should be treated, even if it's from a moving stream. Saltwater for the ocean should only be consumed after it has been distilled and the salt has been removed. "
 );
 
 questions[2] = new Question(
-  ["Test question #3"],
-  ["correct answer 1", "answer 2", "answer 3", "answer 4"],
-  0,
-  "Explanation for why it's correct."
+  ["According to the CDC, which of the following is the best food to consume during a disaster with no power and limited water supply?"],
+  ["Saltine crackers", "Bacon", "Canned foods with high water content", "Zombie leftovers"],
+  2,
+  "Canned foods are safe, stay fresh without refrigeration, and can be carried with you. Foods with high fat, protein  and salt content should be avoided when your water supply is low. These foods force the body to use more water for digestion. Zombie leftovers should always be avoided, regardless of your water supply."
 );
 
 questions[3] = new Question(
-  ["Test question #4"],
-  ["answer 1", "correct answer 2", "answer 3", "answer 4"],
-  1,
-  "Explanation for why it's correct."
+  ["According to the CDC, which of the following food items can be stored indefinitely during the zombie apocalypse?"],
+  ["Powdered Milk", "Canned Fruits", "Peanut Butter", "Dried Pasta"],
+  3,
+  "Powered milk is only safe for six months, canned fruits and peanut butter are safe for up to a year, but dried pasta can be stored indefinitely if kept in a cool, dry, sealed container."
 );
 
 questions[4] = new Question(
-  ["Test question #5"],
-  ["answer 1", "answer 2", "answer 3", "correct answer 4"],
-  3,
+  ["According to the CDC, how long can perishable foods be left out at room temperature?"],
+  ["30 minutes", "2 hours", "4 hours", "24 hours"],
+  1,
   "Explanation for why it's correct."
 );
     
