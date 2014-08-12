@@ -45,8 +45,20 @@ $(document).ready(function() {
             if (selected == questions[player.answered].correct) {
                 console.log("answer #" + (selected + 1) + " is the correct answer!");
                 player.score++
+                //flashing green background on correct
+                $('#wrapper').css("background", "green");
+                  setTimeout(function(){
+                  $('#wrapper').css("background", "black");
+                  }, 200);
+
             } else {
                 console.log("answer #" + (selected + 1) + " is the wrong answer.");
+                //flashing red background on correct
+                $('#wrapper').css("background", "red");
+                  setTimeout(function(){
+                  $('#wrapper').css("background", "black");
+                  }, 200);
+
             }
             
             //checking if it's the last question
@@ -57,6 +69,7 @@ $(document).ready(function() {
                 //$('#question-' + player.answered).show();
             } else {
               $('.quiz-ctr').hide();
+              $('.score-value').hide();
               $('.result-ctr').show();
               showScore();
             }
@@ -84,7 +97,8 @@ function Player() {
 
 // Show Score as user progresses through quiz (class is ".score-value")
 function showScore () {
-$('.score-value').text(player.score + " out of " + questions.length);
+$('.score-value').text("Total: " + player.score + " points");
+$('.score-value2').text("Your Score: " + player.score + " points");
 $('#answered').text("Question number " + (1 + player.answered) + " out of " + questions.length);
 }
 
