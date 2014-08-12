@@ -24,34 +24,52 @@ $(document).ready(function() {
 
     // show question and answers
     function showQuestion(questionNumber) {
-        for (var i = 0; i < questions[questionNumber].questionText.length; i++) {
-            $('.question-span').text(questions[questionNumber].questionText[i]);
-        }
+        var questionItem = $("<div class='question' id='question-" + questionNumber + "'></div>");
+
+        //for (var i = 0; i < questions[questionNumber].questionText.length; i++) {
+            questionItem.append(questions[questionNumber].questionText);
+        //}
 
         for (var i = 0; i < questions[questionNumber].answers.length; i++) {
-            $(".answer-ctr").append("<div class=\"answers\">" + questions[questionNumber].answers[i] + "</div>");
-            $(questions.answered).hide();
+            questionItem.append("<div class=\"answers\">" + questions[questionNumber].answers[i] + "</div>");
+           //$(questions.answered).hide();
         }
-
+        $("#quiz-ctr").append(questionItem)
 
         //selecting answer
         $('.answers').click(function() {
-            var selected = $('.answers').index(this);
-            
-            //console.log("answer #" + (selected + 1) + " has been clicked" );
+            var selected = $(this).index();
+
+            $('#question-' + (player.answered)).hide();
+
             if (selected == questions[player.answered].correct) {
                 console.log("answer #" + (selected + 1) + " is the correct answer!");
                 player.score++
+                //flashing green background on correct
+                $('#wrapper').css("background", "green");
+                  setTimeout(function(){
+                  $('#wrapper').css("background", "black");
+                  }, 200);
+
             } else {
                 console.log("answer #" + (selected + 1) + " is the wrong answer.");
+                //flashing red background on correct
+                $('#wrapper').css("background", "red");
+                  setTimeout(function(){
+                  $('#wrapper').css("background", "black");
+                  }, 200);
+
             }
             
+            //checking if it's the last question
             player.answered++;
             if (player.answered < questions.length){
                 showScore();
                 showQuestion(player.answered)
+                //$('#question-' + player.answered).show();
             } else {
               $('.quiz-ctr').hide();
+              $('.score-value').hide();
               $('.result-ctr').show();
               showScore();
             }
@@ -79,7 +97,8 @@ function Player() {
 
 // Show Score as user progresses through quiz (class is ".score-value")
 function showScore () {
-$('.score-value').text(player.score + " out of " + questions.length);
+$('.score-value').text("Total: " + player.score + " points");
+$('.score-value2').text("Your Score: " + player.score + " points");
 $('#answered').text("Question number " + (1 + player.answered) + " out of " + questions.length);
 }
 

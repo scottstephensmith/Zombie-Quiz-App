@@ -1,8 +1,43 @@
 /*body { } */
 
-.start-ctr, .quiz-ctr, .result-ctr {
-    margin:0 auto;
+body {
+  background-image: url(../wood-texture.jpg);
+  background-repeat:repeat;
+}
+
+h1 {
     text-align: center;
+    color:white;
+}
+
+#wrapper {
+    background-color:black;
+    opacity: 0.8;
+    max-width:400px;
+    margin:30px auto;
+    padding:15px;
+}
+
+.flash-correct{
+    background-color:green;
+    opacity: 0.8;
+}
+
+.flash-wrong{
+    background-color: red;
+    opacity:0.8;
+}
+
+.question {
+    color:white;
+    text-align:center;
+}
+
+.start-ctr, .quiz-ctr, .result-ctr {
+    margin:15px auto;
+    padding:10px;
+    text-align: center;
+    color:white;
 }
 .start-button, .quiz-button {
     padding:10px;
@@ -10,14 +45,17 @@
     color:white;
     background-color:black;
     border-radius:5px;
+    max-width: 300px;
+    margin:auto;
 }
 
 .answers {
     padding:10px;
-    margin:10px;
+    margin:10px auto;
     color:white;
     background-color:green;
     border-radius:5px;
+    max-width: 300px;
 }
 
 .answers:hover {
@@ -26,9 +64,18 @@
 }
 
 .start-button:hover, .quiz-button:hover {
-    background-color:blue;
+    background-color:red;
 }
 
 .question-span, .answers, .quiz-button, .start-button, .answer-ctr {
   display:block;
 }
+
+.score-value, .score-value2 {
+    font-size: 18px;
+    color:green;
+    margin:10px auto;
+    text-align: center;
+    padding:5px;
+}
+
